@@ -18,17 +18,23 @@ class Task2 {
     return str.split(" ").join("");
   };
 
-  //solution
+  //SOLUTION
   palindromSolution = () => {
+    //if reversed word same with input word return true, otherwise return false
     const reversed = this.reverseString().toLowerCase();
+
     if (this.withSpaces) {
+      //if any space, remove that space
       return reversed === this.word.toLowerCase();
     }
+
     return (
+      //with spaces inside
       this.removeSpaces(reversed) === this.removeSpaces(this.word.toLowerCase())
     );
   };
 
+  //method for just print it
   isPalindrome = () => {
     console.log("Palindrome without spaces: ", this.palindromSolution());
 
@@ -47,8 +53,11 @@ word2.isPalindrome();
 const word3 = new Task2("Anna");
 word3.isPalindrome();
 
-const word4 = new Task2("My gym");
+const word4 = new Task2("Civic");
 word4.isPalindrome();
 
-const word5 = new Task2("No lemon, no melon");
+const word5 = new Task2("My gym");
 word5.isPalindrome();
+
+const word6 = new Task2("No lemon, no melon");
+word6.isPalindrome();
