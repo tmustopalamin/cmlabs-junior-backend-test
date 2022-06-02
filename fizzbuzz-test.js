@@ -53,5 +53,36 @@ function fizzBuzz(start, end) {
     }
   }
 }
-
 fizzBuzz(100, 200);
+
+// using class
+class FizzBuzz {
+  constructor(start, end) {
+    this.start = start;
+    this.end = end;
+  }
+
+  fizzBuzz = () => {
+    if (this.start <= this.end) {
+      if (this.start % 3 == 0 && this.start % 5 == 0) {
+        console.log(this.start + " FizzBuzz");
+        this.start++;
+        this.fizzBuzz(this.start, this.end);
+      } else if (this.start % 3 == 0) {
+        console.log(this.start + " Fizz");
+        this.start++;
+        this.fizzBuzz(this.start, this.end);
+      } else if (this.start % 5 == 0) {
+        console.log(this.start + " Buzz");
+        this.start++;
+        this.fizzBuzz(this.start, this.end);
+      } else {
+        console.log(this.start + " ");
+        this.start++;
+        this.fizzBuzz(this.start, this.end);
+      }
+    }
+  };
+}
+const fb = new FizzBuzz(1, 100);
+fb.fizzBuzz();
