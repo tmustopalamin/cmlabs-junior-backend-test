@@ -30,3 +30,28 @@ for (let i = 1; i <= 100; i++) {
 
   console.log(i + " ");
 }
+
+// task 1 alternative solution 2
+function fizzBuzz(start, end) {
+  if (start <= end) {
+    if (start % 3 == 0 && start % 5 == 0) {
+      console.log(start + " FizzBuzz");
+      start++;
+      fizzBuzz(start, end);
+    } else if (start % 3 == 0) {
+      console.log(start + " Fizz");
+      start++;
+      fizzBuzz(start, end);
+    } else if (start % 5 == 0) {
+      console.log(start + " Buzz");
+      start++;
+      fizzBuzz(start, end);
+    } else {
+      console.log(start + " ");
+      start++;
+      fizzBuzz(start, end);
+    }
+  }
+}
+
+fizzBuzz(100, 200);
